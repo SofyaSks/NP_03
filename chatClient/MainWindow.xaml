@@ -1,0 +1,21 @@
+﻿<Window x:Class="chatClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:chatClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Closed="Window_Closed">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top"> Ваше имя:</TextBlock>
+        <TextBox DockPanel.Dock="Top" Text="{Binding UserName}"/>
+
+        <TextBlock DockPanel.Dock="Top">Сообщение:</TextBlock>
+
+        <DockPanel DockPanel.Dock="Top">
+            <Button DockPanel.Dock="Right" Click="Button_Click">Сказать</Button>
+            <TextBox DockPanel.Dock="Top" Text="{Binding Message}"/>
+        </DockPanel>
+        <ListBox x:Name="listBox" ItemsSource="{Binding Chat}"/>
+    </DockPanel>
+</Window>
